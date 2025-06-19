@@ -1,0 +1,4 @@
+Array
+(
+    [iD] => Instance of 'Worker'
+)

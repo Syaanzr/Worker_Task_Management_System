@@ -1,0 +1,16 @@
+Array
+(
+    [name] => ali
+    [email] => ali246@gmail.com
+    [phone] => 0112223344
+    [password] => 246
+    [address] => sintok
+)
+SQL Query: INSERT INTO `worker_table`(`name`, `email`, `phone`, `password`, `address`) 
+              VALUES ('killa','killa274@gmail.com','0182447616','431bf3b995a99c2cd6899b97187d1542a965cec9','korea')SQL Query: INSERT INTO `worker_table`(`name`, `email`, `phone`, `password`, `address`) 
+              VALUES ('mia','mia222@gmail.com','0112223333','1c6637a8f2e1f75e06ff9984894d6bd16a3a36a9','penang')SQL Query: INSERT INTO `worker_table`(`name`, `email`, `phone`, `password`, `address`) 
+              VALUES ('nana','nana123@gmail.com','0113334455','40bd001563085fc35165329ea1ff5c5ecbdbbeef','Langkawi')SQL Query: INSERT INTO `worker_table`(`name`, `email`, `phone`, `password`, `address`) 
+              VALUES ('mai','mai444@gmail.com','0144545544','9a3e61b6bcc8abec08f195526c3132d5a4a98cc0','Negeri Sembilan')SQL Query: INSERT INTO `worker_table`(`name`, `email`, `phone`, `password`, `address`) 
+              VALUES ('Faris','faris555@gmail.com','0155555555','cfa1150f1787186742a9a884b73a43d8cf219f9b','Kelantan')SQL Query: INSERT INTO `worker_table`(`name`, `email`, `phone`, `password`, `address`) 
+              VALUES ('Ammar','ammar111@gmail.com','0112221212','6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2','Johor')SQL Query: INSERT INTO `worker_table`(`name`, `email`, `phone`, `password`, `address`) 
+              VALUES ('surti','surti999@gmail.com','02945678','afc97ea131fd7e2695a98ef34013608f97f34e1d','tanjung rambutan')

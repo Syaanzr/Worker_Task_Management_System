@@ -1,0 +1,405 @@
+{"work_id":"3","worker_id":"3","submission_text":"complete already"}POST received at: 2025-06-19 09:36:20
+Array
+(
+    [id] => 3
+    [iD] => 3
+    [submission_text] => haven't start yety
+)
+
+POST received at: 2025-06-19 09:37:17
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => will finish soon
+)
+
+POST received at: 2025-06-19 09:43:10
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => a little bit more
+)
+
+POST received at: 2025-06-19 09:45:07
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => done
+)
+
+POST received at: 2025-06-19 09:47:12
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => in progress
+)
+
+POST received at: 2025-06-19 09:49:17
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => almost done
+)
+
+POST received at: 2025-06-19 10:08:52
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => almost finish
+)
+
+POST received at: 2025-06-19 10:36:32
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => clear
+)
+
+POST received at: 2025-06-19 10:42:19
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => deep clean !
+)
+
+POST received at: 2025-06-19 10:44:46
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => done the task
+)
+
+POST received at: 2025-06-19 10:54:54
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => almost done
+)
+
+POST received at: 2025-06-19 11:03:15
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => finish
+)
+
+POST received at: 2025-06-19 11:15:03
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => finish
+)
+
+POST received at: 2025-06-19 11:19:20
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => done
+)
+
+POST received at: 2025-06-19 11:21:41
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => udah mek
+)
+
+POST received at: 2025-06-19 11:30:29
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => sudah siap
+)
+
+POST received at: 2025-06-19 11:32:45
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => bila nak settle siot
+)
+
+POST received at: 2025-06-19 11:34:04
+Array
+(
+)
+
+POST received at: 2025-06-19 11:37:48
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => cepatlah siap
+)
+
+POST received at: 2025-06-19 11:52:58
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => dah jadi
+)
+
+POST received at: 2025-06-19 12:00:50
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => woi dah la fix
+)
+
+POST received at: 2025-06-19 12:01:14
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => already upload the data
+)
+
+POST received at: 2025-06-19 12:06:22
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => kemas pintu
+)
+
+POST received at: 2025-06-19 12:07:29
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => berapa kali mau buat da
+)
+
+POST received at: 2025-06-19 12:23:19
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => dah seribu kali buat ni adoiii
+)
+
+POST received at: 2025-06-19 12:24:30
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => cepatlah siap woi
+)
+
+POST received at: 2025-06-19 12:26:10
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => udah la tu nyah
+)
+
+POST received at: 2025-06-19 12:27:10
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => meow
+)
+
+POST received at: 2025-06-19 12:31:59
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => woof woof
+)
+
+POST received at: 2025-06-19 12:38:18
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => settle da
+)
+
+POST received at: 2025-06-19 12:39:36
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => sekali lagi
+)
+
+POST received at: 2025-06-19 12:41:14
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => damn
+)
+
+POST received at: 2025-06-19 12:48:26
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => bang bang bang
+)
+
+POST received at: 2025-06-19 13:07:01
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => meow
+)
+
+POST received at: 2025-06-19 13:10:22
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => everything completed sir
+)
+
+POST received at: 2025-06-19 13:12:26
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => geng bas sekolah
+)
+
+POST received at: 2025-06-19 13:14:09
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => boom
+)
+
+POST received at: 2025-06-19 13:15:47
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => buuuuuuu
+)
+
+POST received at: 2025-06-19 13:16:05
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => lan dh buat kenapa tkde
+)
+
+POST received at: 2025-06-19 13:27:57
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => boom
+)
+
+POST received at: 2025-06-19 14:14:26
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => dah settle ke
+)
+
+POST received at: 2025-06-19 14:28:08
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => done
+)
+
+POST received at: 2025-06-19 14:35:15
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => dah buat tapi tak keluar
+)
+
+POST received at: 2025-06-19 14:37:03
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => pretty little baby
+)
+
+POST received at: 2025-06-19 14:40:22
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => shut up
+)
+
+POST received at: 2025-06-19 14:45:56
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => okay ke tu
+)
+
+POST received at: 2025-06-19 14:52:47
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => meow
+)
+
+POST received at: 2025-06-19 14:55:58
+Array
+(
+    [work_id] => 8
+    [iD] => 3
+    [submission_text] => sudah siap
+)
+
+POST received at: 2025-06-19 14:57:11
+Array
+(
+    [work_id] => 3
+    [worker_id] => 3
+    [submission_text] => I'm done
+)
+
+POST received at: 2025-06-19 14:57:36
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => kenapa tak kelar
+)
+
+POST received at: 2025-06-19 15:01:26
+Array
+(
+    [work_id] => 8
+    [worker_id] => 3
+    [submission_text] => I'm good
+)
+
