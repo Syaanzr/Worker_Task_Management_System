@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 include 'dbconnect.php';
 
-$worker_id = $_POST['iD'];
+$workerId = $_POST['iD'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
@@ -31,9 +31,9 @@ if (isset($_FILES['profile_pic'])) {
 }
 
 // Update profile
-$update = "UPDATE workers SET name=?, email=?, phone=?, address=?, profile_pic=? WHERE id=?";
-$stmt = $conn->prepare($update);
-$stmt->bind_param("ssssss", $name, $email, $phone, $address, $profilePicPath, $worker_id);
+$query = "UPDATE worker_table SET name = ?, email = ?, phone = ?, address = ?, WHERE iD =?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("ssssi", $name, $email, $phone, $address, $profilePicPath, $workerId);
 
 if ($stmt->execute()) {
     echo json_encode(['status' => 'success']);
