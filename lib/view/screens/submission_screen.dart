@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class SubmissionScreen extends StatefulWidget {
-  final int work_id;
-  final int worker_id;
+  final int workId;
+  final int workerId;
   final String title;
 
   const SubmissionScreen({
     super.key,
-    required this.work_id,
-    required this.worker_id,
+    required this.workId,
+    required this.workerId,
     required this.title,
   });
 
@@ -39,8 +39,8 @@ class _SubmissionScreenState extends State<SubmissionScreen> {
     final uri = Uri.parse('http://10.0.2.2/worker_list/submit.php');
     final response = await http.post(uri,      
       body: {
-      'work_id': widget.work_id.toString(),
-      'worker_id': widget.worker_id.toString(),
+      'work_id': widget.workId.toString(),
+      'id': widget.workerId.toString(),
       'submission_text': submissionText,
     });
 
