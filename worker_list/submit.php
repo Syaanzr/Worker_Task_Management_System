@@ -9,7 +9,7 @@ file_put_contents("log.txt", "POST received at: " . date('Y-m-d H:i:s') . "\n", 
 file_put_contents("log.txt", print_r($_POST, true) . "\n", FILE_APPEND);
 
 $work_id = $_POST['work_id'] ?? null;
-$worker_id = $_POST['worker_id'] ?? null;
+$worker_id = $_POST['id'] ?? null;
 $submission_text = $_POST['submission_text'] ?? null;
 
 
@@ -18,7 +18,7 @@ if (!$work_id || !$worker_id || !$submission_text) {
     exit;
 }
 
-$query = "INSERT INTO tbl_submissions (work_id, worker_id, submission_text) VALUES (?,?,?)";
+$query = "INSERT INTO tbl_submissions (work_id, id, submission_text) VALUES (?,?,?)";
 $stmt = $conn->prepare($query);
 
 if (!$stmt) {
