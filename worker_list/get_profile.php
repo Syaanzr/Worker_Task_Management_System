@@ -1,26 +1,17 @@
 <?php
-header('Content-Type: application/json');
 include 'dbconnect.php';
 
-$worker_id = $_POST['id'] ?? null;
+$workerId = $_POST['iD'];
 
-if($worker_id){
-    echo json_encode(["error" => "No ID received"]);
-    file_put_contents("debug_post.txt", print_r($_POST, true));
-    exit;
-}
-
-
-
-$query = "SELECT * FROM worker_table WHERE id = ?";
+$query = "SELECT name, email, phone FROM worker_table WHERE iD = ?";
 $stmt = $conn->prepare($query);
-$stmt->bind_param("i", $worker_id);
+$stmt->bind_param("i", $workerId);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($row = $result->fetch_assoc()) {
     echo json_encode($row);
-} else{
+} else {
     echo json_encode(["error" => "User not found"]);
 }
 ?>
