@@ -5,8 +5,8 @@ import 'dart:convert';
 import 'package:image_picker/image_picker.dart';
 
 class ProfileScreen extends StatefulWidget {
-  final String id;
-  const ProfileScreen({super.key, required this.id});
+  final String workerId;
+  const ProfileScreen({super.key, required this.workerId});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -35,14 +35,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Future<void> fetchProfile() async {
     final response = await http.post(
       Uri.parse("http://10.0.2.2/worker_list/get_profile.php"),
-      body: {"iD": widget.id},
+      body: {"iD": widget.workerId},
     );
  if (response.statusCode == 200) {
         final data = json.decode(response.body);
         setState(() {
           nameController.text = data['name'] ?? '';
           emailController.text = data['email'] ?? '';
-          phoneController.text = data['phone'] ?? '';
+          phoneController.text = data['phone']?.toString() ?? '';
           addressController.text = data['address'] ?? '';
           isLoading = false;
         });
@@ -68,12 +68,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final request = http.MultipartRequest(
       'POST',
       Uri.parse("http://10.0.2.2/worker_list/update_profile.php"),
+      
     );
-    request.fields['iD'] = widget.id;
+    request.fields['iD'] = widget.workerId;
     request.fields['name'] = nameController.text;
     request.fields['email'] = emailController.text;
     request.fields['phone'] = phoneController.text;
     request.fields['address'] = addressController.text;
+    request.fields['remove_picture'] = _imageFile == null ? 'true' : 'false';
     
     if (_imageFile != null) {
       request.files.add(await http.MultipartFile.fromPath('profile_pic', _imageFile!.path));
@@ -81,23 +83,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     final response = await request.send();
     final resBody = await response.stream.bytesToString();
+
     if (response.statusCode == 200 && resBody.contains('success')) {
       setState(() => _message = 'Profile updated succesfully.');
       }else {
         setState(() => _message = 'Update Failed.');
         }
-  }
+          ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(_message)),
+  );
+}
           
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Profile"), backgroundColor: Color.fromARGB(255, 209, 46, 179)),
-      body: isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : SingleChildScrollView(
-              padding: const EdgeInsets.all(16),
-              child: Column(
+      //appBar: AppBar(title: const Text("Profile"), backgroundColor: Color.fromARGB(255, 209, 46, 179)),
+      body: Padding(padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text("Worker Profile",
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
+          ),
+          ),
+          const SizedBox(height: 20),
+          Expanded(child: ListView(
                 children: [
                   GestureDetector(
                     onTap: _pickImage,
@@ -118,10 +132,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   TextField(controller: phoneController, decoration: const InputDecoration(labelText: "phone")),
                   TextField(controller: addressController, decoration: const InputDecoration(labelText: "address")),
                   const SizedBox(height: 20),
+                  if (_message.isNotEmpty)
+                  Text(
+                    _message,
+                    style: TextStyle(
+                      color: _message.contains("success") ? Colors.green : Colors.red,
+                      fontWeight: FontWeight.bold,
+                      ),
+                      ),
                   ElevatedButton(onPressed: updateProfile, child: const Text("Save Changes")),
                 ],
               ),
             ),
+        ],
+      ),
+      )
+      
     );
   }
 }
