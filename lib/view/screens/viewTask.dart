@@ -57,56 +57,75 @@ Future<void> _fetchTasks() async {
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      title: const Text('Assigned Tasks'),
+      //title: const Text('Assigned Tasks'),
       backgroundColor: Color.fromARGB(255, 209, 46, 179),
     ),
     body: _isLoading
         ? const Center(child: CircularProgressIndicator())
         : _errorMessage.isNotEmpty
             ? Center(child: Text(_errorMessage))
-            : ListView.builder(
-                itemCount: _task.length,
-                itemBuilder: (context, index) {
-                  final task = _task[index];
-                  return InkWell(
-                    onTap: () async {
-                      final result = await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => SubmissionScreen(
-                            work_id: task.id,
-                            worker_id: int.parse(widget.iD!),
-                            title: task.title,
-                          ),
-                        ),
-                      );
+            :Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(padding: EdgeInsets.all(16.0),
+                child: Text(
+                  "Assigned Tasks",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.deepPurple,
+                  ),
+                  ),
+                  ),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: _task.length,
+                      itemBuilder: (context, index){
+                        final task = _task[index];
+                        return InkWell(
+                          onTap: () async {
+                            final result = await Navigator.push(
+                              context, 
+                              MaterialPageRoute(
+                                builder: (_) => SubmissionScreen(
+                                  workId: task.id, 
+                                  workerId: int.parse(widget.iD!), 
+                                  title: task.title,
+                                  ),
+                                  ),
+                            );
 
-                      if (result == true) {
-                        _fetchTasks(); // refresh to show updated status
-                      }
-                    },
-                    child: Card(
-                      margin: const EdgeInsets.all(8),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('id: ${task.id}', style: const TextStyle(fontWeight: FontWeight.bold)),
-                            Text('title: ${task.title}'),
-                            Text('description: ${task.description}'),
-                            Text('date_assigned: ${task.dateAssigned}'),
-                            Text('due_date: ${task.dueDate}'),
-                            Text('status: ${task.status}', style: TextStyle(
-                              color: task.status == 'completed' ? Colors.green : Colors.red,
-                            )),
-                          ],
-                        ),
-                      ),
+                            if (result == true){
+                              _fetchTasks();
+                            }
+                          },
+                          child: Card(
+                            margin: const EdgeInsets.all(8),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('id: ${task.id}', style: const TextStyle(fontWeight: FontWeight.bold)),
+                                  Text('title: ${task.title}'),
+                                  Text('description: ${task.description}'),
+                                  Text('date_assigned: ${task.dateAssigned}'),
+                                  Text('date_due: ${task.dueDate}'),
+                                  Text(
+                                    'status: ${task.status}',
+                                    style:TextStyle(color: task.status  == 'completed' ? Colors.green: Colors.red,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
-              ),
+                  ),
+              ],
+            ),
   );
 }
 }
