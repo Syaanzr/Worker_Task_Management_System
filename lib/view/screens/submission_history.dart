@@ -5,8 +5,8 @@ import 'edit_submission.dart';
 import 'package:worker_task2/view/model/submission.dart';
 
 class SubmissionHistory extends StatefulWidget {
-  final String worker_id;
-  const SubmissionHistory({super.key, required this.worker_id});
+  final String workerId;
+  const SubmissionHistory({super.key, required this.workerId});
 
   @override
   State<SubmissionHistory> createState() => _SubmissionHistoryState();
@@ -25,12 +25,12 @@ class _SubmissionHistoryState extends State<SubmissionHistory> {
 
   Future<void> fetchSubmission() async {
     try {
-      print("Sending iD: ${widget.worker_id}");
+      print("Sending id: ${widget.workerId}");
 
     final response = await http.post(
       Uri.parse("http://10.0.2.2/worker_list/get_submissions.php"),
       body: {
-        "iD": widget.worker_id,
+        "id": widget.workerId,
         },
     );
 
@@ -87,7 +87,7 @@ class _SubmissionHistoryState extends State<SubmissionHistory> {
                       MaterialPageRoute(
                         builder: (_) => EditSubmission(
                           submission_id: submission.id, 
-                          originalText: submission.text,
+                          submission_text: submission.text,
                           ),
                       ),
                       );
