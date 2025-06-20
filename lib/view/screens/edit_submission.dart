@@ -3,9 +3,9 @@ import 'package:http/http.dart' as http;
 
 class EditSubmission extends StatefulWidget {
   final int submission_id;
-  final String originalText;
+  final String submission_text;
 
-  const EditSubmission({super.key, required this.submission_id, required this.originalText});
+  const EditSubmission({super.key, required this.submission_id, required this.submission_text});
 
   @override
   State<EditSubmission> createState() => _EditSubmissionState();
@@ -18,7 +18,7 @@ class _EditSubmissionState extends State<EditSubmission> {
   @override
   void initState() {
     super.initState();
-    _controller = TextEditingController(text: widget.originalText);
+    _controller = TextEditingController(text: widget.submission_text);
   }
 
   Future<void> saveEdit() async {
@@ -27,7 +27,7 @@ class _EditSubmissionState extends State<EditSubmission> {
       Uri.parse("http://10.0.2.2/worker_list/edit_submissions.php"),
       body: {
         "submission_id": widget.submission_id,
-        "updated_text": _controller.text.trim(),
+        "submission_text": _controller.text.trim(),
       },
     );
 
