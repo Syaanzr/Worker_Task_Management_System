@@ -4,6 +4,8 @@ import 'package:worker_task2/view/screens/viewTask.dart';
 import 'package:worker_task2/view/screens/submission_history.dart';
 import 'package:worker_task2/view/screens/profile_screen.dart';
 import 'package:worker_task2/view/screens/loginscreen.dart';
+import 'package:worker_task2/view/screens/home_screen.dart';
+
 
 class MainScreen extends StatefulWidget {
   final Worker worker;
@@ -22,9 +24,10 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     super.initState();
     _screens = [
+      HomeScreen(worker: widget.worker),
       viewTask(iD: widget.worker.iD!),
-      SubmissionHistory(worker_id: widget.worker.iD!),
-      ProfileScreen(id: widget.worker.toString()),
+      SubmissionHistory(workerId: widget.worker.iD!),
+      ProfileScreen(workerId: widget.worker.iD!),
     ];
   }
 
@@ -58,16 +61,52 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
-      body: _screens[_currentIndex],
+      body: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 300),
+        child: _screens[_currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        selectedItemColor: Colors.purple,
+        selectedItemColor: Colors.deepPurple,
         unselectedItemColor: Colors.grey,
-        onTap: (index) => setState(() => _currentIndex = index),
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.task), label: 'Tasks'),
-          BottomNavigationBarItem(icon: Icon(Icons.history), label: 'History'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          setState(() => _currentIndex = index);
+        },
+        items: [
+          const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Homepage'),
+          const BottomNavigationBarItem(icon: Icon(Icons.task), label: 'Tasks'),
+          BottomNavigationBarItem(
+            icon: Stack(
+              children: [
+                const Icon(Icons.history),
+                Positioned(
+                  right: 0,
+                  top: 0,
+                  child: Container(
+                    padding: const EdgeInsets.all(2),
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    constraints: const BoxConstraints(minWidth: 16, minHeight: 16),
+                    child: const Text(
+                      '!',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            label: 'History',
+          ),
+          const BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
     );
